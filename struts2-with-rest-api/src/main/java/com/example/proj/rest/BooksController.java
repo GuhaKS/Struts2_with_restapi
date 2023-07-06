@@ -188,6 +188,7 @@ public class BooksController extends ActionSupport  implements ModelDriven<Objec
         this.books = books;
     }
 
+    //GET /api/accounts
     public HttpHeaders index() throws IOException {
         try{
             try {
@@ -202,6 +203,7 @@ public class BooksController extends ActionSupport  implements ModelDriven<Objec
         return new DefaultHttpHeaders("index").disableCaching();
     }
 
+    //GET /api/accounts/{id}
     public HttpHeaders show() throws IOException {
         books = new ArrayList<>();
         System.out.println(getId());
@@ -210,6 +212,7 @@ public class BooksController extends ActionSupport  implements ModelDriven<Objec
         return new DefaultHttpHeaders("show");
     }
 
+    //POST /api/accounts
     public HttpHeaders create() throws Exception {
         System.out.println(getTitle());
         Book book = new Book(title,author,genre,publicationYear,price,quantity);
@@ -217,6 +220,7 @@ public class BooksController extends ActionSupport  implements ModelDriven<Objec
         return new DefaultHttpHeaders("create");
     }
 
+    //DELETE /api/accounts/{id}
     public HttpHeaders destroy() throws Exception {
         System.out.println("DELETE \t /account:" +getId());
         String result = "destroy";
@@ -226,6 +230,7 @@ public class BooksController extends ActionSupport  implements ModelDriven<Objec
         return new DefaultHttpHeaders(result);
     }
 
+    //PUT /api/accounts/{id} 
     public HttpHeaders update() throws Exception{
         bookInventory = new BookInventory();
         System.out.println("PUT \t /account" +getId());
@@ -258,6 +263,7 @@ public class BooksController extends ActionSupport  implements ModelDriven<Objec
         return new DefaultHttpHeaders("update");
     }
 
+    //GET  /generateReport
     public String generateReport() throws IOException {
         System.out.println("Generated report");
         books = bookInventory.getBooks();
