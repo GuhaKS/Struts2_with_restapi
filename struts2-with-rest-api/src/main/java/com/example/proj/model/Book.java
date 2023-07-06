@@ -91,26 +91,4 @@ public class Book {
         this.price = price;
         this.quantity = quantity;
     }
-
-    // Getters and setters...
-
-    public String toInventoryString() {
-        return id + "\t" + title + "\t\t" + author + "\t\t" +genre+ " \t\t "+ publicationYear + "\t\t" + price + "\t" + quantity;
-    }
-    public String toFileString() {
-        return id + "," + title + "," + author + "," +genre+","+ publicationYear + "," + price + "," + quantity;
-    }
-    @Override
-    public String toString() {
-        return new ToStringBuilder(this)
-                .append("id", id)
-                .append("title", title)
-                .append("author", author)
-                .append("publicationYear",publicationYear)
-                .append("price", price)
-                .append("quantity", quantity)
-                .append("genre",genre)
-                .toString();
-    }
 }
-
