@@ -14,6 +14,27 @@ import org.apache.struts2.rest.HttpHeaders;
 
 public class BooksController extends ActionSupport  implements ModelDriven<Object>{
 
+    private int totalBookquantity;
+    private double minPrice;
+    private double totalPrice;
+    private Book bookWithHighestPrice;
+    private Book bookWithLowestPrice;
+    private double averagePrice;
+    private int id;
+    private String author;
+    private String genre;
+    private int publicationYear;
+    private double price;
+    private int quantity;
+    private SearchCriteria criteria;
+    private Book book ;
+    private String title;
+    private int totalBooks;
+    private double maxPrice;
+    private String search;
+    private List<Book> books;
+    private BookInventory bookInventory = new BookInventory();
+    
     public Book getBook() {
         return book;
     }
@@ -21,8 +42,6 @@ public class BooksController extends ActionSupport  implements ModelDriven<Objec
     public void setBook(Book book) {
         this.book = book;
     }
-
-    private Book book ;
 
     public int getId() {
         return id;
@@ -36,7 +55,6 @@ public class BooksController extends ActionSupport  implements ModelDriven<Objec
         this.title = title;
     }
 
-    private String title;
     public void setId(int id) {
         this.id = id;
     }
@@ -47,9 +65,6 @@ public class BooksController extends ActionSupport  implements ModelDriven<Objec
     public void setTotalBooks(int totalBooks) {
         this.totalBooks = totalBooks;
     }
-
-    private int totalBooks;
-    private double maxPrice;
 
     public double getMaxPrice() {
         return maxPrice;
@@ -66,14 +81,6 @@ public class BooksController extends ActionSupport  implements ModelDriven<Objec
     public void setMinPrice(double minPrice) {
         this.minPrice = minPrice;
     }
-
-    private int totalBookquantity;
-    private double minPrice;
-    private double totalPrice;
-
-    private Book bookWithHighestPrice;
-    private Book bookWithLowestPrice;
-    private double averagePrice;
 
     public int getTotalBookquantity() {
         return totalBookquantity;
@@ -114,12 +121,6 @@ public class BooksController extends ActionSupport  implements ModelDriven<Objec
     public void setAveragePrice(double averagePrice) {
         this.averagePrice = averagePrice;
     }
-    private int id;
-    private String author;
-    private String genre;
-    private int publicationYear;
-    private double price;
-    private int quantity;
 
     public String getAuthor() {
         return author;
@@ -170,17 +171,14 @@ public class BooksController extends ActionSupport  implements ModelDriven<Objec
     public void setSearch(String search) {
         this.search = search;
     }
-    private String search;
+    
     public SearchCriteria getCriteria() {
         return criteria;
     }
     public void setCriteria(SearchCriteria criteria) {
         this.criteria = criteria;
     }
-    private List<Book> books;
-    private BookInventory bookInventory = new BookInventory();
-
-    private SearchCriteria criteria;
+    
     public List<Book> getBooks() {
         return books;
     }
